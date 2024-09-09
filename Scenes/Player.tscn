@@ -1,15 +1,15 @@
-[gd_scene load_steps=20 format=3 uid="uid://ywqs6ges8b8f"]
+[gd_scene load_steps=21 format=3 uid="uid://ywqs6ges8b8f"]
 
 [ext_resource type="Script" path="res://Scenes/Player2D.gd" id="1_d14tr"]
 [ext_resource type="Texture2D" uid="uid://csrn0mej2dq7e" path="res://Assets/Sprout Lands - Sprites - Basic pack [Cup Nooble]/Characters/Basic Charakter Spritesheet.png" id="1_fkxd4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3yvaf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_03no6"]
 atlas = ExtResource("1_fkxd4")
-region = Rect2(0, 48, 48, 48)
+region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_77qch"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fshnb"]
 atlas = ExtResource("1_fkxd4")
-region = Rect2(48, 48, 48, 48)
+region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c206i"]
 atlas = ExtResource("1_fkxd4")
@@ -27,13 +27,13 @@ region = Rect2(0, 144, 48, 48)
 atlas = ExtResource("1_fkxd4")
 region = Rect2(48, 144, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_03no6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yvaf"]
 atlas = ExtResource("1_fkxd4")
-region = Rect2(0, 0, 48, 48)
+region = Rect2(0, 48, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fshnb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_77qch"]
 atlas = ExtResource("1_fkxd4")
-region = Rect2(48, 0, 48, 48)
+region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ym8y"]
 atlas = ExtResource("1_fkxd4")
@@ -71,10 +71,10 @@ region = Rect2(144, 48, 48, 48)
 animations = [{
 "frames": [{
 "duration": 3.0,
-"texture": SubResource("AtlasTexture_3yvaf")
+"texture": SubResource("AtlasTexture_03no6")
 }, {
 "duration": 3.0,
-"texture": SubResource("AtlasTexture_77qch")
+"texture": SubResource("AtlasTexture_fshnb")
 }],
 "loop": true,
 "name": &"idle_down",
@@ -104,10 +104,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 3.0,
-"texture": SubResource("AtlasTexture_03no6")
+"texture": SubResource("AtlasTexture_3yvaf")
 }, {
 "duration": 3.0,
-"texture": SubResource("AtlasTexture_fshnb")
+"texture": SubResource("AtlasTexture_77qch")
 }],
 "loop": true,
 "name": &"idle_up",
@@ -158,12 +158,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6myx"]
+size = Vector2(10, 14)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_d14tr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5wsi3")
-animation = &"idle_left"
-frame_progress = 0.0577419
+animation = &"idle_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i6myx")
